@@ -7,37 +7,37 @@
 # Preparation
 1. install python3.6
 2. install pytorch 0.4.0
-	1. download whl file "cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl" from https://pytorch.org/get-started/previous-versions/
-	2. pip3 install torch_XXX.whl
+	+ 1. download whl file "cu90/torch-0.4.0-cp36-cp36m-linux_x86_64.whl" from https://pytorch.org/get-started/previous-versions/
+	+ 2. pip3 install torch_XXX.whl
 3. cd ${HOME}/faster_rcnn.pytorch
 4. pip3 install requirements.txt
 
 # Directory hierarchy
 TrajectoryDrawing/  
-    faster_rcnn.pytorch/  
-        demo_video/  
-            Moon_morning_2_1.mp4  
-            Moon_morning_2_3.mp4  
-        data/  
-            pretrained_model/  
-                vgg16_caffe.pth (pretrained vgg16 for training and testing faster-RCNN backend)  
-        models/  
-            vgg16/  
-                car_type_0/  
-                    faster_rcnn_1_50_150.pth (trained faster-RCNN model, used for predicting)  
-        prepare_demo_frames.sh (將影片分割成frame，然後放進適當的資料夾)  
-        test_net.py (predict每個frame，預測bbox)  
-        output_video.sh (產生有bbox的影片到./demo_video中)  
-        visualize_movement.py (產生trajectory的影片到./demo_video中)  
-    dataset/  
-        car_type_0/  
-            results/  
-                demo_type_0/  
-            data/  
-                Images/  
-                    (prepare_demo_frames.sh output的frame們都會放在這)  
-                ImageSets/  
-                    (prepare_demo_frames.sh 產生的demo_type_0.txt會放在這，文件包含所有要被test的frame)  
+	+ faster_rcnn.pytorch/  
+		+ demo_video/  
+			+ Moon_morning_2_1.mp4  
+			+ Moon_morning_2_3.mp4  
+		+ data/  
+			+ pretrained_model/  
+				+ vgg16_caffe.pth (pretrained vgg16 for training and testing faster-RCNN backend)  
+		+ models/  
+			+ vgg16/  
+				+ car_type_0/  
+					+ faster_rcnn_1_50_150.pth (trained faster-RCNN model, used for predicting)  
+		+ prepare_demo_frames.sh (將影片分割成frame，然後放進適當的資料夾)  
+		+ test_net.py (predict每個frame，預測bbox)  
+		+ output_video.sh (產生有bbox的影片到./demo_video中)  
+		+ visualize_movement.py (產生trajectory的影片到./demo_video中)  
+	+ dataset/  
+		+ car_type_0/  
+			+ results/  
+		+ demo_type_0/  
+			+ data/  
+				+ Images/  
+					+ (prepare_demo_frames.sh output的frame們都會放在這)  
+				+ ImageSets/  
+					+ (prepare_demo_frames.sh 產生的demo_type_0.txt會放在這，文件包含所有要被test的frame)  
 				
 
 # Dataset type
